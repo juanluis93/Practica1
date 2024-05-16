@@ -1,0 +1,23 @@
+﻿@model CajeroAutomatico.Models.PapeletasADispensar
+
+<h2>Papeletas dispensadas:</h2>
+<div class="table-responsive">
+    <table class="table table-striped table-bordered">
+        <thead class="thead-dark">
+            <tr>
+                <th>Denominación</th>
+                <th>Cantidad</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var papeleta in Model.Papeletas)
+            {
+                <tr>
+                    <td>@papeleta.Key</td>
+                    <td>@papeleta.Value</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a asp-controller="Cajero" asp-action="Index" class="btn btn-primary">Regresar</a>
+</div>
